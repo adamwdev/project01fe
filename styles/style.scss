@@ -1,0 +1,122 @@
+// CSS RESET
+@import "reset";
+// VARIABLES
+@import "varaibles";
+
+nav {
+   
+  background-color: $primary;
+  padding: 0.5em 1.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .brand-logo {
+    display: block;
+    width: 60px;
+  }
+
+  .navbar-toggle {
+    padding: 5px 0;
+    background-color: transparent;
+    border: none;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .bar {
+      display: block;
+      background-color: $secondary;
+      height: 6px;
+      border-radius: 3px;
+      &:not(:last-child) {
+        margin-bottom: 7px;
+      }
+    }
+    .top {
+      width: 100%;
+    }
+    .middle {
+      width: 75%;
+    }
+    .bottom {
+      width: 50%;
+    }
+  }
+  .menu-wrapper {
+    //   display:none;
+    background-color: $secondary;
+    position: fixed;
+    height: 100vh;
+    width:100%;
+    top:0;
+    right:0;
+    transition: all .4s ease;
+    transition-delay: .2s;
+    clip-path: circle(100px at 100% -20%);
+    
+
+  }
+  .menu-wrapper.open{
+    clip-path: circle(1400px at 90% -10%);
+  }
+  .menu {
+    padding: 0 1.4em;
+  }
+  .close-btn {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    padding: 0.3em;
+    justify-content: center;
+    align-items: center;
+    margin:.4em .5em 4em auto;
+    .bar {
+      width: 100%;
+      height: 5px;
+      background-color: white;
+      display: block;
+      border-radius: 3px;
+    }
+    .bar.one {
+      transform:rotate(45deg)
+    }
+    .bar.two {
+      transform:rotate(-90deg)
+    }
+  }
+  .nav-item {
+    padding: 0.5em 0;
+  }
+  .nav-link {
+    display: inline-block;
+    color: white;
+    font-weight: 600;
+    padding: 0.5em 0;
+    position:relative;
+   
+    &::after{
+        content:"";
+        width:0;
+        height:2px;
+        background-color: white;
+        position:absolute;
+        bottom:-1px;
+        left:50%;
+        transition: all .2s ease;
+    }
+    &:hover::after{
+        width:100%;
+        left:0;
+    }
+  }
+  .nav-btn {
+    display: inline-block;
+    background-color: $accent;
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    color: white;
+    font-weight: 600;
+    margin: 0.5em 0;
+  }
+}
